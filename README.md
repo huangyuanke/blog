@@ -1,5 +1,7 @@
 # 一个程序员的自白
-![Mou icon](http://25.io/mou/Mou_128.png)
+```
+![Test icon](https://github.com/huangyuanke/blog/blob/master/sceneimg_15.png)
+```
 ### 希望的环境
 轻松、愉悦、可沉浸、可紧凑
 
