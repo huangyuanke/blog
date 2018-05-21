@@ -1,6 +1,9 @@
 # 一个程序员的自白
 
-![Test icon](https://github.com/huangyuanke/blog/blob/master/sceneimg_15.png)
+![Test icon](url)
+
+## 价值
+科技公司的价值，在团队成员的价值；科技员工的价值，在其专业价值贡献、创新价值的贡献。
 
 ### 希望的环境
 轻松、愉悦、可沉浸、可紧凑
