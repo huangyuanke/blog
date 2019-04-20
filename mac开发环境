@@ -1,4 +1,4 @@
-java环境
+一、java环境
 1、下载安装jdk8\jdk11\jdk12
 2、vi .bash_profile 输入以下内容
 export JAVA_12_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home
