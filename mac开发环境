@@ -16,5 +16,17 @@ alias jdk12='export JAVA_HOME=$JAVA_12_HOME'
 
 3、执行source .bash_profile生效新配置  
 
+二、ll命令行查看
 
-二、mac包管理
+1、vi ~/.bash_profile
+
+在最后面加上以下代码保存
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+最后，保存并推出。
+
+2、执行source .bash_profile生效新配置  
+
+
+三、mac包管理
