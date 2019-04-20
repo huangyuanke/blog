@@ -1,0 +1,13 @@
+java环境
+1、下载安装jdk8\jdk11\jdk12
+2、vi .bash_profile 输入以下内容
+export JAVA_12_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home
+export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home
+export JAVA_HOME=$JAVA_8_HOME
+
+alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
+alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
+alias jdk12='export JAVA_HOME=$JAVA_12_HOME'
+
+3、执行source .bash_profile生效新配置  
