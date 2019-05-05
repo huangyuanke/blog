@@ -2,12 +2,55 @@ macOS Mojave
 10.14.4
 MacBook Air
 
-一、mac包管理
+一、MAC包管理
+1、MAC安装HomeBrew，终端工具执行如下命令： /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+==> This script will install:
+/usr/local/bin/brew
+/usr/local/share/doc/homebrew
+/usr/local/share/man/man1/brew.1
+/usr/local/share/zsh/site-functions/_brew
+/usr/local/etc/bash_completion.d/brew
+/usr/local/Homebrew
+==> The following new directories will be created:
+/usr/local/bin
+/usr/local/etc
+/usr/local/include
+/usr/local/lib
+/usr/local/sbin
+/usr/local/share
+/usr/local/var
+/usr/local/opt
+/usr/local/share/zsh
+/usr/local/share/zsh/site-functions
+/usr/local/var/homebrew
+/usr/local/var/homebrew/linked
+/usr/local/Cellar
+/usr/local/Caskroom
+/usr/local/Homebrew
+/usr/local/Frameworks
 
-二、ll命令行查看
+. . .
 
-1、vi ~/.bash_profile
+- Run `brew help` to get started
+- Further documentation: 
+    https://docs.brew.sh
 
+2、安装MacPorts
+
+二、MAC环境相关
+
+2.1 环境变量
+环境变量，在~/.bash_profile文件里配置。
+编辑环境变量后，终端执行执行source .bash_profile生效新配置。
+
+MAC中针对所有用户设置全局变量：
+vi /etc/profile  --这个地方修改后永久生效，并且针对所有系统用户
+
+MAC中针对当前用户设置环境变量：（推荐）
+vi .bash_profile
+
+2.2 ll命令行查看
+1、终端执行vi ~/.bash_profile
 在最后面加上以下代码保存
 alias ll='ls -alF'
 alias la='ls -A'
@@ -17,9 +60,9 @@ alias l='ls -CF'
 2、执行source .bash_profile生效新配置  
 
 
-三、java环境
+三、oracle java环境
 1、下载安装jdk8\jdk11\jdk12
-2、vi .bash_profile 输入以下内容
+2、vi .bash_profile 输入以下内容：（根据苹果的官方说明，Mac OS X 10.5 及以后的版本应该使用 /usr/libexec/java_home 命令来确定 JAVA_HOME ）
 export JAVA_12_HOME=`/usr/libexec/java_home -v 12`
 export JAVA_11_HOME=`/usr/libexec/java_home -v 11`
 export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
@@ -30,5 +73,92 @@ alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
 alias jdk12='export JAVA_HOME=$JAVA_12_HOME'
 
 3、执行source .bash_profile生效新配置  
+
+4、mac系统下jdk的卸载
+https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html#A1096875
+
+四、SDKMAN管理java相关环境
+1、安装maven与gradle
+sdk install maven
+sdk install gradle
+
+2、配置环境变量
+终端执行vim .bash_profile 
+
+## maven setting
+export MAVEN_HOME=/Users/huangyuanke/.sdkman/candidates/maven/3.6.1/bin
+export PATH=$MAVEN_HOME:$PATH
+
+## gradle setting
+export GRADLE_HOME=/Users/huangyuanke/.sdkman/candidates/gradle/5.4/bin
+export PATH=$GRADLE_HOME:$PATH
+
+3、执行source .bash_profile生效新配置
+
+
+4、使用阿里的maven镜像
+<mirror>  
+    <id>nexus-aliyun</id>  
+    <mirrorOf>central</mirrorOf>    
+    <name>Nexus aliyun</name>  
+    <url>http://maven.aliyun.com/nexus/content/groups/public</url>  
+</mirror>
+
+5、使用阿里的gradle镜像
+
+对所有项目生效，在USER_HOME/.gradle/下创建init.gradle文件
+allprojects {
+    repositories {
+        def ALIYUN_REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public'
+        def ALIYUN_JCENTER_URL = 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+        all {
+            ArtifactRepository repo ->
+                if (repo instanceof MavenArtifactRepository) {
+                    def url = repo.url.toString()
+                    if (url.startsWith('https://repo1.maven.org/maven2')) {
+                        project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_REPOSITORY_URL."
+                        remove repo
+                    }
+                    if (url.startsWith('https://jcenter.bintray.com/')) {
+                        project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_JCENTER_URL."
+                        remove repo
+                    }
+                }
+        }
+        maven {
+            url ALIYUN_REPOSITORY_URL
+            url ALIYUN_JCENTER_URL
+        }
+    }
+} 
+
+
+五、eclipse配置
+5.1 配置 Eclipse IDE的java 环境
+1、下载安装Eclipse IDE for Enterprise Java Developers，Version: 2019-03 (4.11.0)。
+2、Eclipse->Preferences->Java，Compiler/installed JREs，更新JDK/JRE。
+
+5.2 配置Eclipse IDE的Maven/Gradle环境
+1、Eclipse的Maven工具配置
+Preferences->Maven->Installations新增刚安装的Maven
+路径为/Users/huangyuanke/.sdkman/candidates/maven/current
+
+2、Eclipse的Maven的用户配置
+Preferences->Maven->User Setting设置用户配置
+（eclipse默认是用~/.m2位置的用户配置）
+
+5.3 配置Eclipse IDE的Maven/Gradle环境
+1、Eclipse的Gradle工具配置
+Preferences->Gradle->Local installation directory配置gradle
+路径为/Users/huangyuanke/.sdkman/candidates/gradle/current
+
+5.4 Darkest Dark 黑夜主题
+5.5 CodeMix编辑工具
+
+六、node.js环境配置
+
+
+七、web容器环境的配置
+tomcat 启动jvm参数的配置。
 
 
