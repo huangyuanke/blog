@@ -1,0 +1,45 @@
+一、Gradle的使用
+1、Gradle的编译helloWorld。「V」
+2、Gradle的可执行jar程序。「V」
+3、Gradle的可执行web程序，Spring Boot 2.1.4 。「V」
+4、Gradle的tomcat/jetty容器web程序。
+5、WEB接口自动化测试， Mockito ？。
+
+
+二、软件架构设计
+1、web后端Gradle\SpringBoot\jpa\redis\mysql\postgresql\boostrap\前后端分离VUE-MVVM\swagger
+2、web前端NPM\VUE-MVVM\router\IView\BOstrap\JQurey
+3、微服务架构spring zuul/负载均衡 ：Zuul、Ribbon以及Eureka结合可以实现智能路由和负载均衡的功能
+4、spring cloud gateway\Zuul\Ribbon\Eureka网关，负责用户身份认证、权限认证，负责请求监控与记录、日志输出、流量监控、服务降级、API服务管理。
+
+用户前端工具
+微信/支付宝/百度小程序？
+通知工具
+微信小程序资料多一些？
+
+管理前端工具
+vue2.6+TypeScript+Node.js+VScode+Vue-element-Admin+Vue-Other-tool(router/cli/...)
+https://github.com/PanJiaChen/vue-element-admin
+
+管理后端
+Gradle+eclipse+MySql配套开发
+管理后端提供的接口管理模式
+提前将数据写入数据库
+配合数据库生成API接口：用户前端查阅数据、用户前端填写查看记录到数据库、当前管理员在数据填写数据即可、当前管理员查阅数据记录即可
+
+Swagger Editor 生成接口文档，自动生成测试代码及测试数据。
+axios配合mock.js随机数据的使用。
+
+服务端渲染SSR
+node.js管理前端项目开发后，可以在服务端将JS代码转换为静态HTML代码。
+
+三、运维架构设计（可持续继承）
+1、jenkins的安装
+2、jenkins获取代码、编译、测试、提交、等待发布
+3、docker容器的使用？
+
+四、测试相关（可测试反馈）
+1、测试环境的搭建：虚拟机、docker、CentOS 7
+2、ab测试工具。
+3、wrk 进行benchmark测试
+

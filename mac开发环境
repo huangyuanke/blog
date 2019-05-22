@@ -104,6 +104,8 @@ export PATH=$GRADLE_HOME:$PATH
     <url>http://maven.aliyun.com/nexus/content/groups/public</url>  
 </mirror>
 
+在maven的全局配置文件里设置。
+
 5、使用阿里的gradle镜像
 
 对所有项目生效，在USER_HOME/.gradle/下创建init.gradle文件
@@ -132,6 +134,7 @@ allprojects {
     }
 } 
 
+（国内镜像采用了全局配置，省去每个项目依次设置数据源，同时也不改动源码内容。）
 
 五、eclipse配置
 5.1 配置 Eclipse IDE的java 环境
@@ -152,8 +155,14 @@ Preferences->Maven->User Setting设置用户配置
 Preferences->Gradle->Local installation directory配置gradle
 路径为/Users/huangyuanke/.sdkman/candidates/gradle/current
 
-5.4 Darkest Dark 黑夜主题
+5.4 Darkest Dark 黑夜主题 
+不推荐黑色主题，违反正常人日常环境。IDE环境对比色不要差距太大，注意用眼休息。
 5.5 CodeMix编辑工具
+
+
+5.6 lombok.jar插件安装
+https://projectlombok.org/download下载Lombok.jar文件，放到eclipse->plugins文件夹下，安装后重启Eclipse。
+不推荐使用这个工具，项目不直观，理解有偏颇。采用类继承的方式，将重复代码下沉，即可。
 
 六、node.js环境配置
 
