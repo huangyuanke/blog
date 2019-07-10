@@ -1,7 +1,7 @@
 一、Gradle的使用
 1、Gradle的编译helloWorld。「V」
 2、Gradle的可执行jar程序。「V」
-3、Gradle的可执行web程序，Spring Boot 2.1.4 。「V」
+3、Gradle的可执行web程序，Spring Boot 2.1.4 。(2.2都已经发布了，可以使用2.1了)「V」
 4、Gradle的tomcat/jetty容器web程序。
 5、WEB接口自动化测试， Mockito ？。
 
