@@ -164,6 +164,9 @@ Preferences->Gradle->Local installation directory配置gradle
 https://projectlombok.org/download下载Lombok.jar文件，放到eclipse->plugins文件夹下，安装后重启Eclipse。
 不推荐使用这个工具，项目不直观，理解有偏颇。采用类继承的方式，将重复代码下沉，即可。
 
+5.7 阿里java代码规范Eclipse插件的安装
+https://p3c.alibaba.com/plugin/eclipse/update
+
 六、node.js环境配置
 
 
