@@ -86,11 +86,11 @@ sdk install gradle
 终端执行vim .bash_profile 
 
 ## maven setting
-export MAVEN_HOME=/Users/huangyuanke/.sdkman/candidates/maven/3.6.1/bin
+export MAVEN_HOME=/Users/huangyuanke/.sdkman/candidates/maven/current/bin
 export PATH=$MAVEN_HOME:$PATH
 
 ## gradle setting
-export GRADLE_HOME=/Users/huangyuanke/.sdkman/candidates/gradle/5.4/bin
+export GRADLE_HOME=/Users/huangyuanke/.sdkman/candidates/gradle/current/bin
 export PATH=$GRADLE_HOME:$PATH
 
 3、执行source .bash_profile生效新配置
