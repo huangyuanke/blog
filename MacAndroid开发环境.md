@@ -13,15 +13,15 @@
 三、Gradle
 
 （Java依赖包管理）
-* android代码的构建工具
+* Android-Java代码的构建工具
 * 设置环境变量 GRADLE_USER_HOME ?什么用？
 
 四、Android Studio
-* Android SDK Location : /Users/huangyuanke/dtool/android-sdk-macosx
+* Android SDK Location : /Users/huangyuanke/dtool/android-sdk-macosx  （告诉Android Studio使用哪个交叉编译器） 
 * Gradle user home: /Users/huangyuanke/.sdkman/candidates/gradle/current/bin  （告诉Android Studio使用哪个Gradle来构建APP程序）
 
 
 五、Android-Studio-APP-Gradle项目
-* 指定AS项目所用的Gradle是由我们的工程中下面这个文件决定的: {your project}/gradle/wrapper/gradle-wrapper.properties  （操作系统，可以使用高版本Gradle，App项目可使用低版本Gradle）
-* 不同版本的Gradle下载后，保存在 ~/.gradle/wrapper/dists
+* 工程中的文件{your project}/gradle/wrapper/gradle-wrapper.properties 决定AS项目所用的Gradle版本  （操作系统，可以使用高版本Gradle，App项目可使用低版本Gradle）
+* AS项目中，不同的Gradle版本，下载并保存在 ~/.gradle/wrapper/dists
 
